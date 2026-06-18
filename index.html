@@ -1,1 +1,80 @@
-# Saliihhhh
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doğum Günü</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#111;
+    color:white;
+    font-family:Arial, sans-serif;
+}
+
+.container{
+    text-align:center;
+}
+
+input{
+    padding:10px;
+    font-size:18px;
+    border-radius:8px;
+    border:none;
+    margin-top:10px;
+}
+
+button{
+    padding:10px 20px;
+    font-size:18px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.hidden{
+    display:none;
+}
+</style>
+</head>
+<body>
+
+<div class="container" id="page1">
+    <h1>İsminizi girin</h1>
+
+    <input type="text" id="name">
+    <br>
+
+    <button onclick="kontrol()">Devam</button>
+</div>
+
+<div class="container hidden" id="page2">
+    <h1>🎉 Başardınız!</h1>
+    <h2>Bir sene daha ölmediniz.</h2>
+
+    <button onclick="window.open('https://www.instagram.com/reel/DZbjxwgsMlE/?igsh=MWM0bW01a3U2MnhocA==','_blank')">
+        Videoyu Aç
+    </button>
+</div>
+
+<script>
+function kontrol(){
+    let isim = document.getElementById("name").value.trim().toLowerCase();
+
+    if(isim === "salih ege aldemir"){
+        document.getElementById("page1").classList.add("hidden");
+        document.getElementById("page2").classList.remove("hidden");
+    }else{
+        alert("Yanlış isim.");
+    }
+}
+</script>
+
+</body>
+</html>
